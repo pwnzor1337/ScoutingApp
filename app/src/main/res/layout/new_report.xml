@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <TextView
+        android:id="@+id/Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="36dp"
+        android:textAlignment="center"
+        android:text="Add Claimed Data"/>
+    <View
+        android:id="@+id/view"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        android:textAlignment="center"
+        android:layout_alignBottom="@+id/Header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/view">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="closeKeyboard">
+            <TextView
+                android:id="@+id/teamNumberHint"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Team Number"/>
+            <EditText
+                android:id="@+id/teamNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_alignTop="@+id/teamNumberHint"
+                android:layout_centerHorizontal="true"
+                android:hint="Enter Team Number Here"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                android:inputType="number" />
+
+
+            <CheckBox
+                android:id="@+id/autoJewel"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_alignTop="@+id/teamNumber"
+                android:textColor="#000000"
+                android:text="Auto can score jewel"/>
+            <TextView
+                android:id="@+id/autoJewelFrequencyHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:layout_alignTop="@id/autoJewel"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Frequency"/>
+            <EditText
+                android:id="@+id/autoJewelFrequency"
+                android:layout_alignTop="@id/autoJewelFrequencyHint"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:hint="%"
+                android:maxEms="2"
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
+
+
+            <CheckBox
+                android:id="@+id/autoSafeZone"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_alignTop="@+id/autoJewelFrequency"
+                android:textColor="#000000"
+                android:text="Auto can reach safe zone"/>
+            <TextView
+                android:id="@+id/autoSafeZoneFrequencyHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:layout_alignTop="@id/autoSafeZone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Frequency"/>
+            <EditText
+                android:id="@+id/autoSafeZoneFrequency"
+                android:layout_alignTop="@id/autoSafeZoneFrequencyHint"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:hint="%"
+                android:maxEms="2"
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                />
+
+            <CheckBox
+                android:id="@+id/autoPlaceCube"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_alignTop="@+id/autoSafeZoneFrequency"
+                android:textColor="#000000"
+                android:text="Auto can place cube in cryptobox"/>
+            <TextView
+                android:id="@+id/autoPlaceCubeFrequencyHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:layout_alignTop="@id/autoPlaceCube"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Frequency"/>
+            <EditText
+                android:id="@+id/autoPlaceCubeFrequency"
+                android:layout_alignTop="@id/autoPlaceCubeFrequencyHint"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"
+                android:maxEms="2"
+                android:hint="%"
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
+
+            <CheckBox
+                android:id="@+id/autoPlaceCubeCorrectly"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_alignTop="@+id/autoPlaceCubeFrequency"
+                android:textColor="#000000"
+                android:text="Auto can place cube correct column"/>
+            <TextView
+                android:id="@+id/autoPlaceCubeCorrectlyFrequencyHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:layout_alignTop="@id/autoPlaceCubeCorrectly"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Frequency"/>
+            <EditText
+                android:id="@+id/autoPlaceCubeCorrectlyFrequency"
+                android:layout_alignTop="@id/autoPlaceCubeCorrectlyFrequencyHint"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"
+                android:maxEms="2"
+                android:hint="%"
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
+
+
+            <TextView
+                android:id="@+id/cubesTeleopHint"
+                android:layout_marginTop="50dp"
+                android:textSize="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/autoPlaceCubeCorrectlyFrequency"
+                android:textColor="#000000"
+                android:text="TeleOp #Cubes"/>
+            <EditText
+                android:id="@+id/cubesTeleop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_alignTop="@+id/cubesTeleopHint"
+                android:layout_centerHorizontal="true"
+                android:hint="#"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:maxEms="2"
+                android:inputType="number" />
+
+            <CheckBox
+                android:id="@+id/teleopPlatform"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_alignTop="@+id/cubesTeleop"
+                android:textColor="#000000"
+                android:text="TeleOp ends on platform"/>
+            <TextView
+                android:id="@+id/teleopPlatformFrequencyHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:layout_alignTop="@id/teleopPlatform"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Frequency"/>
+            <EditText
+                android:id="@+id/teleopPlatformFrequency"
+                android:layout_alignTop="@id/teleopPlatformFrequencyHint"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"
+                android:maxEms="2"
+                android:hint="%"
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
+
+            <TextView
+                android:id="@+id/relicPositionHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:layout_alignTop="@id/teleopPlatformFrequency"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:text="Relic Placement?"/>
+            <Spinner
+                android:id="@+id/relicPosition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/relicPositionHint"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:entries="@array/relicOptions">
+            </Spinner>
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10px"
+        android:paddingBottom="10px"
+        android:paddingLeft="40px"
+        android:paddingRight="10px"
+        android:layout_alignTop="@+id/view"
+        android:layout_marginTop="10dp"
+        android:background="#0a430b"
+        android:textColor="#ecdd0b"
+        android:textAlignment="center"
+        android:text="Add"
+        android:onClick="addReport"/>
+</RelativeLayout>

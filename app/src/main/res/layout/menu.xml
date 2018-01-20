@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_background">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="36dp"
+        android:text="8696's Scouting App"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFFFF"
+        android:id="@+id/title"
+        />
+    <View
+        android:id="@+id/view"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        android:textAlignment="center"
+        android:layout_alignBottom="@+id/title" />
+    <Button
+        android:id="@+id/addReport"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/view"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Claim"
+        android:onClick="goToNewReport"/>
+    <Button
+        android:id="@+id/addScoring"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/addReport"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Scores"
+        android:onClick="goToNewScoring"/>
+    <Button
+        android:id="@+id/browseData"
+        android:layout_below="@id/addReport"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Browse Data"/>
+    <Button
+        android:id="@+id/help"
+        android:layout_below="@+id/browseData"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Need Help?"
+        android:onClick="goToHelp"/>
+
+</RelativeLayout>

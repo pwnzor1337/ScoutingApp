@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ScoutingApp</string>
+
+    <string-array name="relicOptions">
+        <item>No Relic Placement</item>
+        <item>Pos 1</item>
+        <item>Pos 1 Standing</item>
+        <item>Pos 2</item>
+        <item>Pos 2 Standing</item>
+        <item>Pos 3</item>
+        <item>Pos 3 Standing</item>
+    </string-array>
+</resources>
