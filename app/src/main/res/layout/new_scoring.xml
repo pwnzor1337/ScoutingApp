@@ -48,37 +48,6 @@
         android:layout_toStartOf="@+id/view3"
         android:onClick="closeKeyboard">
 
-        <EditText
-            android:id="@+id/rowRed1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:ems="5"
-            android:hint="Rows"
-            android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible"/>
-        <EditText
-            android:id="@+id/colRed1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="75dp"
-            android:ems="5"
-            android:hint="Cols"
-            android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible" />
-        <EditText
-            android:id="@+id/cubeRed1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="125dp"
-            android:ems="5"
-            android:hint="Cubes"
-            android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible" />
-
     </RelativeLayout>
 
     <RelativeLayout
@@ -86,42 +55,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/view3"
-        android:layout_toRightOf="@+id/view3"
         android:orientation="horizontal"
         android:layout_above="@+id/view2"
+        android:layout_toLeftOf="@+id/view3"
+        android:layout_toStartOf="@+id/view3"
         android:onClick="closeKeyboard">
-        <EditText
-            android:id="@+id/rowRed2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:ems="5"
-            android:hint="Rows"
-            android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible" />
-        <EditText
-            android:id="@+id/colRed2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="75dp"
-            android:ems="5"
-            android:hint="Cols"
-            android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible" />
-        <EditText
-            android:id="@+id/cubeRed2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="125dp"
-            android:ems="5"
-            android:hint="Cubes"
-            android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible" />
 
     </RelativeLayout>
 
@@ -132,11 +73,167 @@
         android:gravity="center"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:layout_above="@+id/view2"
+        android:layout_toLeftOf="@+id/view3"
+        android:layout_toStartOf="@+id/view3"
+        android:onClick="closeKeyboard">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomRightPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:layout_above="@+id/view2"
+        android:layout_toLeftOf="@+id/view3"
+        android:layout_toStartOf="@+id/view3"
+        android:onClick="closeKeyboard">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/topLeftPanelTele"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:layout_above="@+id/view2"
+        android:layout_toLeftOf="@+id/view3"
+        android:layout_toStartOf="@+id/view3"
+        android:onClick="closeKeyboard"
+        android:visibility="invisible">
+
+        <EditText
+            android:id="@+id/rowRed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:ems="5"
+            android:hint="Rows"
+            android:textAlignment="center"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/colRed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:ems="5"
+            android:hint="Cols"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/cubeRed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:ems="5"
+            android:hint="Cubes"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/platformRed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="175dp"
+            android:ems="5"
+            android:hint="Platform"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/patternRed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="225dp"
+            android:ems="5"
+            android:hint="Pattern"
+            android:textAlignment="center"
+            android:inputType="number" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/topRightPanelTele"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/view3"
+        android:layout_toRightOf="@+id/view3"
+        android:orientation="horizontal"
+        android:layout_above="@+id/view2"
+        android:onClick="closeKeyboard"
+        android:visibility="invisible">
+        <EditText
+            android:id="@+id/rowRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:ems="5"
+            android:hint="Rows"
+            android:textAlignment="center"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/colRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:ems="5"
+            android:hint="Cols"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/cubeRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:ems="5"
+            android:hint="Cubes"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/platformRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="175dp"
+            android:ems="5"
+            android:hint="Platform"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/patternRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="225dp"
+            android:ems="5"
+            android:hint="Pattern"
+            android:textAlignment="center"
+            android:inputType="number" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomLeftPanelTele"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/view2"
         android:orientation="horizontal"
         android:layout_toLeftOf="@+id/view3"
         android:layout_toStartOf="@+id/view3"
-        android:onClick="closeKeyboard">
+        android:onClick="closeKeyboard"
+        android:visibility="invisible">
         <EditText
             android:id="@+id/rowBlue1"
             android:layout_width="wrap_content"
@@ -145,8 +242,7 @@
             android:ems="5"
             android:hint="Rows"
             android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible" />
+            android:inputType="number" />
         <EditText
             android:id="@+id/colBlue1"
             android:layout_width="wrap_content"
@@ -155,8 +251,7 @@
             android:ems="5"
             android:hint="Cols"
             android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible" />
+            android:inputType="number" />
         <EditText
             android:id="@+id/cubeBlue1"
             android:layout_width="wrap_content"
@@ -165,13 +260,30 @@
             android:ems="5"
             android:hint="Cubes"
             android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible" />
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/platformBlue1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="175dp"
+            android:ems="5"
+            android:hint="Platform"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/patternBlue1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="225dp"
+            android:ems="5"
+            android:hint="Pattern"
+            android:textAlignment="center"
+            android:inputType="number" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/bottomRightPanel"
+        android:id="@+id/bottomRightPanelTele"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -181,7 +293,8 @@
         android:orientation="horizontal"
         android:layout_toRightOf="@+id/view3"
         android:layout_toEndOf="@+id/view3"
-        android:onClick="closeKeyboard">
+        android:onClick="closeKeyboard"
+        android:visibility="invisible">
         <EditText
             android:id="@+id/rowBlue2"
             android:layout_width="wrap_content"
@@ -190,8 +303,7 @@
             android:ems="5"
             android:hint="Rows"
             android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible" />
+            android:inputType="number" />
         <EditText
             android:id="@+id/colBlue2"
             android:layout_width="wrap_content"
@@ -200,8 +312,7 @@
             android:ems="5"
             android:hint="Cols"
             android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible" />
+            android:inputType="number"/>
         <EditText
             android:id="@+id/cubeBlue2"
             android:layout_width="wrap_content"
@@ -210,8 +321,79 @@
             android:ems="5"
             android:hint="Cubes"
             android:textAlignment="center"
-            android:inputType="number"
-            android:visibility="invisible" />
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/platformBlue2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="175dp"
+            android:ems="5"
+            android:hint="Platform"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/patternBlue2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="225dp"
+            android:ems="5"
+            android:hint="Pattern"
+            android:textAlignment="center"
+            android:inputType="number" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/topLeftPanelAuto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:layout_above="@+id/view2"
+        android:layout_toLeftOf="@+id/view3"
+        android:layout_toStartOf="@+id/view3"
+        android:onClick="closeKeyboard"
+        android:visibility="invisible">
+
+        <EditText
+            android:id="@+id/safeZoneRed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:ems="5"
+            android:hint="Safe Zone"
+            android:textAlignment="center"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/autoCubeRed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:ems="5"
+            android:hint="Auto Cube"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/autoColRed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:ems="5"
+            android:hint="Correct Col"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/autoJewel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="175dp"
+            android:ems="5"
+            android:hint="Jewel"
+            android:textAlignment="center"
+            android:inputType="number" />
 
     </RelativeLayout>
 

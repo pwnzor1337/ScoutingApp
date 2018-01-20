@@ -43,15 +43,19 @@ public class AddScoringActivity extends AppCompatActivity {
     String rowRed1;
     String colRed1;
     String cubeRed1;
+    String platRed1;
     String rowRed2;
     String colRed2;
     String cubeRed2;
+    String platRed2;
     String rowBlue1;
     String colBlue1;
     String cubeBlue1;
+    String platBlue1;
     String rowBlue2;
     String colBlue2;
     String cubeBlue2;
+    String platBlue2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,76 +143,98 @@ public class AddScoringActivity extends AppCompatActivity {
         bottomRightBackground.setBackgroundColor(0x880000ff);
     }
 
-    private void showCryptoData() {
+    private void showTeleData() {
 
         System.out.println("yo im setting the shit to be visible rn.");
         findViewById(R.id.colRed1).setVisibility(View.VISIBLE);
         findViewById(R.id.rowRed1).setVisibility(View.VISIBLE);
         findViewById(R.id.cubeRed1).setVisibility(View.VISIBLE);
+        findViewById(R.id.platformRed1).setVisibility(View.VISIBLE);
 
         findViewById(R.id.colRed2).setVisibility(View.VISIBLE);
         findViewById(R.id.rowRed2).setVisibility(View.VISIBLE);
         findViewById(R.id.cubeRed2).setVisibility(View.VISIBLE);
+        findViewById(R.id.platformRed2).setVisibility(View.VISIBLE);
 
         findViewById(R.id.colBlue1).setVisibility(View.VISIBLE);
         findViewById(R.id.rowBlue1).setVisibility(View.VISIBLE);
         findViewById(R.id.cubeBlue1).setVisibility(View.VISIBLE);
+        findViewById(R.id.platformBlue1).setVisibility(View.VISIBLE);
 
         findViewById(R.id.colBlue2).setVisibility(View.VISIBLE);
         findViewById(R.id.rowBlue2).setVisibility(View.VISIBLE);
         findViewById(R.id.cubeBlue2).setVisibility(View.VISIBLE);
+        findViewById(R.id.platformBlue2).setVisibility(View.VISIBLE);
     }
 
-    private void collectCryptoData() {
+    private void collectTeleData() {
         EditText editTextColRed1 = (EditText) findViewById(R.id.colRed1);
         EditText editTextRowRed1 = (EditText) findViewById(R.id.rowRed1);
         EditText editTextCubeRed1 = (EditText) findViewById(R.id.cubeRed1);
+        EditText editTextPlatRed1 = (EditText) findViewById(R.id.platformRed1);
 
         EditText editTextColRed2 = (EditText) findViewById(R.id.colRed2);
         EditText editTextRowRed2 = (EditText) findViewById(R.id.rowRed2);
         EditText editTextCubeRed2 =(EditText) findViewById(R.id.cubeRed2);
+        EditText editTextPlatRed2 = (EditText) findViewById(R.id.platformRed2);
 
         EditText editTextColBlue1 = (EditText) findViewById(R.id.colBlue1);
         EditText editTextRowBlue1 = (EditText) findViewById(R.id.rowBlue1);
         EditText editTextCubeBlue1 = (EditText) findViewById(R.id.cubeBlue1);
+        EditText editTextPlatBlue1 = (EditText) findViewById(R.id.platformBlue1);
 
         EditText editTextColBlue2 = (EditText) findViewById(R.id.colBlue2);
         EditText editTextRowBlue2 = (EditText) findViewById(R.id.rowBlue2);
         EditText editTextCubeBlue2 = (EditText) findViewById(R.id.cubeBlue2);
+        EditText editTextPlatBlue2 = (EditText) findViewById(R.id.platformBlue2);
 
         editTextColRed1.setVisibility(View.INVISIBLE);
         editTextRowRed1.setVisibility(View.INVISIBLE);
         editTextCubeRed1.setVisibility(View.INVISIBLE);
+        editTextPlatRed1.setVisibility(View.INVISIBLE);
 
         editTextColRed2.setVisibility(View.INVISIBLE);
         editTextRowRed2.setVisibility(View.INVISIBLE);
         editTextCubeRed2.setVisibility(View.INVISIBLE);
+        editTextPlatRed2.setVisibility(View.INVISIBLE);
 
         editTextColBlue1.setVisibility(View.INVISIBLE);
         editTextRowBlue1.setVisibility(View.INVISIBLE);
         editTextCubeBlue1.setVisibility(View.INVISIBLE);
+        editTextPlatBlue1.setVisibility(View.INVISIBLE);
 
         editTextColBlue2.setVisibility(View.INVISIBLE);
         editTextRowBlue2.setVisibility(View.INVISIBLE);
         editTextCubeBlue2.setVisibility(View.INVISIBLE);
+        editTextPlatBlue2.setVisibility(View.INVISIBLE);
 
         colRed1 = editTextColRed1.getText().toString();
         rowRed1 = editTextRowRed1.getText().toString();
         cubeRed1 = editTextCubeRed1.getText().toString();
+        platRed1 = editTextPlatRed1.getText().toString();
 
         colRed2 = editTextColRed2.getText().toString();
         rowRed2 = editTextRowRed2.getText().toString();
         cubeRed2 = editTextCubeRed2.getText().toString();
+        platRed2 = editTextPlatRed2.getText().toString();
 
         colBlue1 = editTextColBlue1.getText().toString();
         rowBlue1 = editTextRowBlue1.getText().toString();
         cubeBlue1 = editTextCubeBlue1.getText().toString();
+        platBlue1 = editTextPlatBlue1.getText().toString();
 
         colBlue2 = editTextColBlue2.getText().toString();
         rowBlue2 = editTextRowBlue2.getText().toString();
         cubeBlue2 = editTextCubeBlue2.getText().toString();
+        platBlue2 = editTextPlatBlue2.getText().toString();
+    }
 
-        System.out.println(colRed1 + " " + colBlue1 + " " + cubeBlue2);
+    private void showAutoData() {
+
+    }
+
+    private void collectAutoData() {
+
     }
 
     public void onContinue(View v) {
@@ -217,12 +243,18 @@ public class AddScoringActivity extends AppCompatActivity {
         if(continueCounter == 0) {
             setNames();
             setBackgroundColors();
-            showCryptoData();
+            showTeleData();
             continueCounter++;
             return;
         }
         if(continueCounter == 1) {
-            collectCryptoData();
+            collectTeleData();
+            showAutoData();
+            continueCounter++;
+            return;
+        }
+        if(continueCounter == 2) {
+            collectAutoData();
             continueCounter++;
             return;
         }
