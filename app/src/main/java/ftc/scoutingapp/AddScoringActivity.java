@@ -57,6 +57,23 @@ public class AddScoringActivity extends AppCompatActivity {
     String cubeBlue2;
     String platBlue2;
 
+    String autoJewelRed1;
+    String safeZoneRed1;
+    String autoCubeRed1;
+    String autoColRed1;
+    String autoJewelRed2;
+    String safeZoneRed2;
+    String autoCubeRed2;
+    String autoColRed2;
+    String autoJewelBlue1;
+    String safeZoneBlue1;
+    String autoCubeBlue1;
+    String autoColBlue1;
+    String autoJewelBlue2;
+    String safeZoneBlue2;
+    String autoCubeBlue2;
+    String autoColBlue2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("in new scoring");
@@ -144,30 +161,28 @@ public class AddScoringActivity extends AppCompatActivity {
     }
 
     private void showTeleData() {
+        final RelativeLayout topLeft = (RelativeLayout) findViewById(R.id.topLeftPanelTele);
+        final RelativeLayout topRight = (RelativeLayout) findViewById(R.id.topRightPanelTele);
+        final RelativeLayout bottomLeft = (RelativeLayout) findViewById(R.id.bottomLeftPanelTele);
+        final RelativeLayout bottomRight = (RelativeLayout) findViewById(R.id.bottomRightPanelTele);
 
-        System.out.println("yo im setting the shit to be visible rn.");
-        findViewById(R.id.colRed1).setVisibility(View.VISIBLE);
-        findViewById(R.id.rowRed1).setVisibility(View.VISIBLE);
-        findViewById(R.id.cubeRed1).setVisibility(View.VISIBLE);
-        findViewById(R.id.platformRed1).setVisibility(View.VISIBLE);
-
-        findViewById(R.id.colRed2).setVisibility(View.VISIBLE);
-        findViewById(R.id.rowRed2).setVisibility(View.VISIBLE);
-        findViewById(R.id.cubeRed2).setVisibility(View.VISIBLE);
-        findViewById(R.id.platformRed2).setVisibility(View.VISIBLE);
-
-        findViewById(R.id.colBlue1).setVisibility(View.VISIBLE);
-        findViewById(R.id.rowBlue1).setVisibility(View.VISIBLE);
-        findViewById(R.id.cubeBlue1).setVisibility(View.VISIBLE);
-        findViewById(R.id.platformBlue1).setVisibility(View.VISIBLE);
-
-        findViewById(R.id.colBlue2).setVisibility(View.VISIBLE);
-        findViewById(R.id.rowBlue2).setVisibility(View.VISIBLE);
-        findViewById(R.id.cubeBlue2).setVisibility(View.VISIBLE);
-        findViewById(R.id.platformBlue2).setVisibility(View.VISIBLE);
+        topLeft.setVisibility(View.VISIBLE);
+        topRight.setVisibility(View.VISIBLE);
+        bottomLeft.setVisibility(View.VISIBLE);
+        bottomRight.setVisibility(View.VISIBLE);
     }
 
     private void collectTeleData() {
+        final RelativeLayout topLeft = (RelativeLayout) findViewById(R.id.topLeftPanelTele);
+        final RelativeLayout topRight = (RelativeLayout) findViewById(R.id.topRightPanelTele);
+        final RelativeLayout bottomLeft = (RelativeLayout) findViewById(R.id.bottomLeftPanelTele);
+        final RelativeLayout bottomRight = (RelativeLayout) findViewById(R.id.bottomRightPanelTele);
+
+        topLeft.setVisibility(View.INVISIBLE);
+        topRight.setVisibility(View.INVISIBLE);
+        bottomLeft.setVisibility(View.INVISIBLE);
+        bottomRight.setVisibility(View.INVISIBLE);
+
         EditText editTextColRed1 = (EditText) findViewById(R.id.colRed1);
         EditText editTextRowRed1 = (EditText) findViewById(R.id.rowRed1);
         EditText editTextCubeRed1 = (EditText) findViewById(R.id.cubeRed1);
@@ -187,26 +202,6 @@ public class AddScoringActivity extends AppCompatActivity {
         EditText editTextRowBlue2 = (EditText) findViewById(R.id.rowBlue2);
         EditText editTextCubeBlue2 = (EditText) findViewById(R.id.cubeBlue2);
         EditText editTextPlatBlue2 = (EditText) findViewById(R.id.platformBlue2);
-
-        editTextColRed1.setVisibility(View.INVISIBLE);
-        editTextRowRed1.setVisibility(View.INVISIBLE);
-        editTextCubeRed1.setVisibility(View.INVISIBLE);
-        editTextPlatRed1.setVisibility(View.INVISIBLE);
-
-        editTextColRed2.setVisibility(View.INVISIBLE);
-        editTextRowRed2.setVisibility(View.INVISIBLE);
-        editTextCubeRed2.setVisibility(View.INVISIBLE);
-        editTextPlatRed2.setVisibility(View.INVISIBLE);
-
-        editTextColBlue1.setVisibility(View.INVISIBLE);
-        editTextRowBlue1.setVisibility(View.INVISIBLE);
-        editTextCubeBlue1.setVisibility(View.INVISIBLE);
-        editTextPlatBlue1.setVisibility(View.INVISIBLE);
-
-        editTextColBlue2.setVisibility(View.INVISIBLE);
-        editTextRowBlue2.setVisibility(View.INVISIBLE);
-        editTextCubeBlue2.setVisibility(View.INVISIBLE);
-        editTextPlatBlue2.setVisibility(View.INVISIBLE);
 
         colRed1 = editTextColRed1.getText().toString();
         rowRed1 = editTextRowRed1.getText().toString();
@@ -230,10 +225,70 @@ public class AddScoringActivity extends AppCompatActivity {
     }
 
     private void showAutoData() {
+        final RelativeLayout topLeft = (RelativeLayout) findViewById(R.id.topLeftPanelAuto);
+        final RelativeLayout topRight = (RelativeLayout) findViewById(R.id.topRightPanelAuto);
+        final RelativeLayout bottomLeft = (RelativeLayout) findViewById(R.id.bottomLeftPanelAuto);
+        final RelativeLayout bottomRight = (RelativeLayout) findViewById(R.id.bottomRightPanelAuto);
 
+        topLeft.setVisibility(View.VISIBLE);
+        topRight.setVisibility(View.VISIBLE);
+        bottomLeft.setVisibility(View.VISIBLE);
+        bottomRight.setVisibility(View.VISIBLE);
     }
 
     private void collectAutoData() {
+        final RelativeLayout topLeft = (RelativeLayout) findViewById(R.id.topLeftPanelAuto);
+        final RelativeLayout topRight = (RelativeLayout) findViewById(R.id.topRightPanelAuto);
+        final RelativeLayout bottomLeft = (RelativeLayout) findViewById(R.id.bottomLeftPanelAuto);
+        final RelativeLayout bottomRight = (RelativeLayout) findViewById(R.id.bottomRightPanelAuto);
+
+        topLeft.setVisibility(View.INVISIBLE);
+        topRight.setVisibility(View.INVISIBLE);
+        bottomLeft.setVisibility(View.INVISIBLE);
+        bottomRight.setVisibility(View.INVISIBLE);
+
+        EditText editTextAutoJewelRed1 = (EditText) findViewById(R.id.autoJewelRed1);
+        EditText editTextSafeZoneRed1 = (EditText) findViewById(R.id.safeZoneRed1);
+        EditText editTextAutoCubeRed1 = (EditText) findViewById(R.id.autoCubeRed1);
+        EditText editTextAutoColRed1 = (EditText) findViewById(R.id.autoColRed1);
+
+        EditText editTextAutoJewelRed2 = (EditText) findViewById(R.id.autoJewelRed2);
+        EditText editTextSafeZoneRed2 = (EditText) findViewById(R.id.safeZoneRed2);
+        EditText editTextAutoCubeRed2 = (EditText) findViewById(R.id.autoCubeRed2);
+        EditText editTextAutoColRed2 = (EditText) findViewById(R.id.autoColRed2);
+
+        EditText editTextAutoJewelBlue1 = (EditText) findViewById(R.id.autoJewelBlue1);
+        EditText editTextSafeZoneBlue1 = (EditText) findViewById(R.id.safeZoneBlue1);
+        EditText editTextAutoCubeBlue1 = (EditText) findViewById(R.id.autoCubeBlue1);
+        EditText editTextAutoColBlue1 = (EditText) findViewById(R.id.autoColBlue1);
+
+        EditText editTextAutoJewelBlue2 = (EditText) findViewById(R.id.autoJewelBlue2);
+        EditText editTextSafeZoneBlue2 = (EditText) findViewById(R.id.safeZoneBlue2);
+        EditText editTextAutoCubeBlue2 = (EditText) findViewById(R.id.autoCubeBlue2);
+        EditText editTextAutoColBlue2 = (EditText) findViewById(R.id.autoColBlue2);
+
+        autoJewelRed1 = editTextAutoJewelRed1.getText().toString();
+        safeZoneRed1 = editTextSafeZoneRed1.getText().toString();
+        autoCubeRed1 = editTextAutoCubeRed1.getText().toString();
+        autoColRed1 = editTextAutoColRed1.getText().toString();
+
+        autoJewelRed2 = editTextAutoJewelRed1.getText().toString();
+        safeZoneRed2 = editTextSafeZoneRed1.getText().toString();
+        autoCubeRed2 = editTextAutoCubeRed1.getText().toString();
+        autoColRed2 = editTextAutoColRed1.getText().toString();
+
+        autoJewelBlue1 = editTextAutoJewelRed1.getText().toString();
+        safeZoneBlue1 = editTextSafeZoneRed1.getText().toString();
+        autoCubeBlue1 = editTextAutoCubeRed1.getText().toString();
+        autoColBlue1 = editTextAutoColRed1.getText().toString();
+
+        autoJewelBlue2 = editTextAutoJewelRed1.getText().toString();
+        safeZoneBlue2 = editTextSafeZoneRed1.getText().toString();
+        autoCubeBlue2 = editTextAutoCubeRed1.getText().toString();
+        autoColBlue2 = editTextAutoColRed1.getText().toString();
+    }
+
+    private void createSaveFile() {
 
     }
 
@@ -255,6 +310,7 @@ public class AddScoringActivity extends AppCompatActivity {
         }
         if(continueCounter == 2) {
             collectAutoData();
+            createSaveFile();
             continueCounter++;
             return;
         }

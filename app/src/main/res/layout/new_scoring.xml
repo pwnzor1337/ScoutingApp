@@ -55,13 +55,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_above="@+id/view2"
         android:layout_alignParentTop="true"
         android:orientation="horizontal"
-        android:layout_above="@+id/view2"
-        android:layout_toLeftOf="@+id/view3"
-        android:layout_toStartOf="@+id/view3"
+        android:layout_toEndOf="@+id/view3"
+        android:layout_toRightOf="@+id/view3"
         android:onClick="closeKeyboard">
 
     </RelativeLayout>
@@ -73,9 +71,8 @@
         android:gravity="center"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:orientation="horizontal"
-        android:layout_above="@+id/view2"
+        android:layout_below="@+id/view2"
         android:layout_toLeftOf="@+id/view3"
         android:layout_toStartOf="@+id/view3"
         android:onClick="closeKeyboard">
@@ -87,13 +84,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:orientation="horizontal"
-        android:layout_above="@+id/view2"
-        android:layout_toLeftOf="@+id/view3"
-        android:layout_toStartOf="@+id/view3"
+        android:layout_below="@+id/view2"
+        android:layout_toEndOf="@+id/view3"
+        android:layout_toRightOf="@+id/view3"
         android:onClick="closeKeyboard">
 
     </RelativeLayout>
@@ -386,7 +382,7 @@
             android:textAlignment="center"
             android:inputType="number" />
         <EditText
-            android:id="@+id/autoJewel"
+            android:id="@+id/autoJewelRed1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="175dp"
@@ -439,5 +435,157 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/view3"
         android:layout_toEndOf="@+id/view3" />
+
+    <RelativeLayout
+        android:id="@+id/topRightPanelAuto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_above="@+id/view2"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/view3"
+        android:layout_toRightOf="@+id/view3"
+        android:onClick="closeKeyboard"
+        android:visibility="invisible">
+
+        <EditText
+            android:id="@+id/safeZoneRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:ems="5"
+            android:hint="Safe Zone"
+            android:textAlignment="center"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/autoCubeRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:ems="5"
+            android:hint="Auto Cube"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/autoColRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:ems="5"
+            android:hint="Correct Col"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/autoJewelRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="175dp"
+            android:ems="5"
+            android:hint="Jewel"
+            android:textAlignment="center"
+            android:inputType="number" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomLeftPanelAuto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/view2"
+        android:layout_toLeftOf="@+id/view3"
+        android:layout_toStartOf="@+id/view3"
+        android:visibility="invisible">
+
+        <EditText
+            android:id="@+id/safeZoneBlue1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:ems="5"
+            android:hint="Safe Zone"
+            android:textAlignment="center"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/autoCubeBlue1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:ems="5"
+            android:hint="Auto Cube"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/autoColBlue1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:ems="5"
+            android:hint="Correct Col"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/autoJewelBlue1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="175dp"
+            android:ems="5"
+            android:hint="Jewel"
+            android:textAlignment="center"
+            android:inputType="number" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomRightPanelAuto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/view2"
+        android:layout_toEndOf="@+id/view3"
+        android:layout_toRightOf="@+id/view3"
+        android:visibility="invisible">
+
+        <EditText
+            android:id="@+id/safeZoneBlue2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:ems="5"
+            android:hint="Safe Zone"
+            android:textAlignment="center"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/autoCubeBlue2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:ems="5"
+            android:hint="Auto Cube"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/autoColBlue2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:ems="5"
+            android:hint="Correct Col"
+            android:textAlignment="center"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/autoJewelBlue2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="175dp"
+            android:ems="5"
+            android:hint="Jewel"
+            android:textAlignment="center"
+            android:inputType="number" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
