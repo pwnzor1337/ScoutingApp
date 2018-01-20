@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         viewHistory.add(layoutResID);
     }
 
+
     private void goBackOneView() {
         viewHistory.remove(viewHistory.size() - 1);
         super.setContentView(viewHistory.get(viewHistory.size() - 1));
