@@ -2,6 +2,7 @@ package ftc.scoutingapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -74,6 +75,17 @@ public class MainActivity extends AppCompatActivity {
         onBackPressed();
     }
 
+    public void findTeam(View v) {
+        String teamNumber;
+
+//        SharedPreferences sharedpref = getSharedPreferences(teamNumber,
+    }
+
+
+    public void goToBrowseData(View v) {
+        System.out.println("going to browse data");
+        setContentView(R.layout.browse_data);
+    }
     public void goToNewScoring(View v) {
         System.out.println("going to new scoring");
         Intent addScoringActivityScreenIntent = new Intent(this, AddScoringActivity.class);

@@ -1,6 +1,8 @@
 package ftc.scoutingapp;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +12,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.Set;
 
 /**
  * Created by Kaleb on 1/19/2018.
@@ -44,18 +48,22 @@ public class AddScoringActivity extends AppCompatActivity {
     String colRed1;
     String cubeRed1;
     String platRed1;
+    String patternRed1;
     String rowRed2;
     String colRed2;
     String cubeRed2;
     String platRed2;
+    String patternRed2;
     String rowBlue1;
     String colBlue1;
     String cubeBlue1;
     String platBlue1;
+    String patternBlue1;
     String rowBlue2;
     String colBlue2;
     String cubeBlue2;
     String platBlue2;
+    String patternBlue2;
 
     String autoJewelRed1;
     String safeZoneRed1;
@@ -187,41 +195,49 @@ public class AddScoringActivity extends AppCompatActivity {
         EditText editTextRowRed1 = (EditText) findViewById(R.id.rowRed1);
         EditText editTextCubeRed1 = (EditText) findViewById(R.id.cubeRed1);
         EditText editTextPlatRed1 = (EditText) findViewById(R.id.platformRed1);
+        EditText editTextPatternRed1 = (EditText) findViewById(R.id.patternRed1);
 
         EditText editTextColRed2 = (EditText) findViewById(R.id.colRed2);
         EditText editTextRowRed2 = (EditText) findViewById(R.id.rowRed2);
         EditText editTextCubeRed2 =(EditText) findViewById(R.id.cubeRed2);
         EditText editTextPlatRed2 = (EditText) findViewById(R.id.platformRed2);
+        EditText editTextPatternRed2 = (EditText) findViewById(R.id.patternRed2);
 
         EditText editTextColBlue1 = (EditText) findViewById(R.id.colBlue1);
         EditText editTextRowBlue1 = (EditText) findViewById(R.id.rowBlue1);
         EditText editTextCubeBlue1 = (EditText) findViewById(R.id.cubeBlue1);
         EditText editTextPlatBlue1 = (EditText) findViewById(R.id.platformBlue1);
+        EditText editTextPatternBlue1 = (EditText) findViewById(R.id.patternBlue1);
 
         EditText editTextColBlue2 = (EditText) findViewById(R.id.colBlue2);
         EditText editTextRowBlue2 = (EditText) findViewById(R.id.rowBlue2);
         EditText editTextCubeBlue2 = (EditText) findViewById(R.id.cubeBlue2);
         EditText editTextPlatBlue2 = (EditText) findViewById(R.id.platformBlue2);
+        EditText editTextPatternBlue2 = (EditText) findViewById(R.id.patternBlue2);
 
         colRed1 = editTextColRed1.getText().toString();
         rowRed1 = editTextRowRed1.getText().toString();
         cubeRed1 = editTextCubeRed1.getText().toString();
         platRed1 = editTextPlatRed1.getText().toString();
+        patternRed1 = editTextPatternRed1.getText().toString();
 
         colRed2 = editTextColRed2.getText().toString();
         rowRed2 = editTextRowRed2.getText().toString();
         cubeRed2 = editTextCubeRed2.getText().toString();
         platRed2 = editTextPlatRed2.getText().toString();
+        patternRed2 = editTextPatternRed2.getText().toString();
 
         colBlue1 = editTextColBlue1.getText().toString();
         rowBlue1 = editTextRowBlue1.getText().toString();
         cubeBlue1 = editTextCubeBlue1.getText().toString();
         platBlue1 = editTextPlatBlue1.getText().toString();
+        patternBlue1 = editTextPatternBlue1.getText().toString();
 
         colBlue2 = editTextColBlue2.getText().toString();
         rowBlue2 = editTextRowBlue2.getText().toString();
         cubeBlue2 = editTextCubeBlue2.getText().toString();
         platBlue2 = editTextPlatBlue2.getText().toString();
+        patternBlue2 = editTextPatternBlue2.getText().toString();
     }
 
     private void showAutoData() {
@@ -288,7 +304,169 @@ public class AddScoringActivity extends AppCompatActivity {
         autoColBlue2 = editTextAutoColRed1.getText().toString();
     }
 
-    private void createSaveFile() {
+    private void saveRed1(int points) {
+        SharedPreferences sharedPref = getSharedPreferences(teamRed1, Context.MODE_PRIVATE);
+        String oldDataString = sharedPref.getString(teamRed1, "");
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        if(oldDataString.equals("")) {
+            String red1 = teamRed1 + " " + rowRed1 + " " + colRed1 + " " + cubeRed1 + " " + platRed1 + " " + patternRed1 + " " + autoJewelRed1 + " " + safeZoneRed1 + " " + autoCubeRed1 + " " + autoColRed1 + " " + String.valueOf(points);
+            System.out.println(red1);
+            editor.putString(teamRed1, red1);
+            editor.commit();
+            return;
+        }
+
+        String[] newData = {rowRed1, colRed1, cubeRed1, platRed1, patternRed1, autoJewelRed1, safeZoneRed1, autoCubeRed1, autoColRed1, String.valueOf(points)};
+        String[] oldDataWithTeam = oldDataString.split(" ");
+        String[] oldData = new String[oldDataWithTeam.length-1];
+        for(int i = 0; i < oldData.length; i++) {
+            oldData[i] = oldDataWithTeam[i+1];
+        }
+        String[] aveData = new String[newData.length];
+
+        String result = teamRed1;
+
+        for(int i = 0; i < newData.length; i++) {
+            double oldDouble = Double.parseDouble(oldData[i]);
+            double newDouble = Double.parseDouble(newData[i]);
+            double aveDouble = Math.round((oldDouble + newDouble / 2) * 100.0)/100.0;
+            aveData[i] = String.valueOf(aveDouble);
+            result += " " + String.valueOf(aveDouble);
+        }
+
+        System.out.println(result);
+        editor.putString(teamRed1, result);
+        editor.commit();
+    }
+
+    private void saveRed2(int points) {
+        SharedPreferences sharedPref = getSharedPreferences(teamRed2, Context.MODE_PRIVATE);
+        String oldDataString = sharedPref.getString(teamRed2, "");
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        if(oldDataString.equals("")) {
+            String red2 = teamRed2 + " " + rowRed2 + " " + colRed2 + " " + cubeRed2 + " " + platRed2 + " " + patternRed2 + " " + autoJewelRed2 + " " + safeZoneRed2 + " " + autoCubeRed2 + " " + autoColRed2 + " " + String.valueOf(points);
+            System.out.println(red2);
+            editor.putString(teamRed2, red2);
+            editor.commit();
+            return;
+        }
+
+        String[] newData = {rowRed2, colRed2, cubeRed2, platRed2, patternRed2, autoJewelRed2, safeZoneRed2, autoCubeRed2, autoColRed2, String.valueOf(points)};
+        String[] oldDataWithTeam = oldDataString.split(" ");
+        String[] oldData = new String[oldDataWithTeam.length-1];
+        for(int i = 0; i < oldData.length; i++) {
+            oldData[i] = oldDataWithTeam[i+1];
+        }
+        String[] aveData = new String[newData.length];
+
+        String result = teamRed2;
+
+        for(int i = 0; i < newData.length; i++) {
+            double oldDouble = Double.parseDouble(oldData[i]);
+            double newDouble = Double.parseDouble(newData[i]);
+            double aveDouble = Math.round((oldDouble + newDouble / 2.0) * 100.0)/100.0;
+            aveData[i] = String.valueOf(aveDouble);
+            result += " " + String.valueOf(aveDouble);
+        }
+
+        System.out.println(result);
+        editor.putString(teamRed2, result);
+        editor.commit();
+    }
+
+    private void saveBlue1(int points) {
+        SharedPreferences sharedPref = getSharedPreferences(teamBlue1, Context.MODE_PRIVATE);
+        String oldDataString = sharedPref.getString(teamBlue1, "");
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        if(oldDataString.equals("")) {
+            String blue1 = teamBlue1 + " " + rowBlue1 + " " + colBlue1 + " " + cubeBlue1 + " " + platBlue1 + " " + patternBlue1 + " " + autoJewelBlue1 + " " + safeZoneBlue1 + " " + autoCubeBlue1 + " " + autoColBlue1 + " " + String.valueOf(points);
+            System.out.println(blue1);
+            editor.putString(teamBlue1, blue1);
+            editor.commit();
+            return;
+        }
+
+        String[] newData = {rowBlue1, colBlue1, cubeBlue1, platBlue1, patternBlue1, autoJewelBlue1, safeZoneBlue1, autoCubeBlue1, autoColBlue1, String.valueOf(points)};
+        String[] oldDataWithTeam = oldDataString.split(" ");
+        String[] oldData = new String[oldDataWithTeam.length-1];
+        for(int i = 0; i < oldData.length; i++) {
+            oldData[i] = oldDataWithTeam[i+1];
+        }
+        String[] aveData = new String[newData.length];
+
+        String result = teamBlue1;
+
+        for(int i = 0; i < newData.length; i++) {
+            double oldDouble = Double.parseDouble(oldData[i]);
+            double newDouble = Double.parseDouble(newData[i]);
+            double aveDouble = Math.round((oldDouble + newDouble / 2) * 100.0)/100.0;
+            aveData[i] = String.valueOf(aveDouble);
+            result += " " + String.valueOf(aveDouble);
+        }
+
+        System.out.println(result);
+        editor.putString(teamBlue1, result);
+        editor.commit();
+    }
+
+    private void saveBlue2(int points) {
+        SharedPreferences sharedPref = getSharedPreferences(teamBlue2, Context.MODE_PRIVATE);
+
+        String oldDataString = sharedPref.getString(teamBlue2, "");
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        if(oldDataString.equals("")) {
+            String blue2 = teamBlue2 + " " + rowBlue2 + " " + colBlue2 + " " + cubeBlue2 + " " + platBlue2 + " " + patternBlue2 + " " + autoJewelBlue2 + " " + safeZoneBlue2 + " " + autoCubeBlue2 + " " + autoColBlue2 + " " + String.valueOf(points);
+            System.out.println(blue2);
+            editor.putString(teamBlue2, blue2);
+            editor.commit();
+            return;
+        }
+
+        String[] newData = {rowBlue2, colBlue2, cubeBlue2, platBlue2, patternBlue2, autoJewelBlue2, safeZoneBlue2, autoCubeBlue2, autoColBlue2, String.valueOf(points)};
+        String[] oldDataWithTeam = oldDataString.split(" ");
+        String[] oldData = new String[oldDataWithTeam.length-1];
+        for(int i = 0; i < oldData.length; i++) {
+            oldData[i] = oldDataWithTeam[i+1];
+        }
+        String[] aveData = new String[newData.length];
+
+        String result = teamBlue2;
+
+        for(int i = 0; i < newData.length; i++) {
+            double oldDouble = Double.parseDouble(oldData[i]);
+            double newDouble = Double.parseDouble(newData[i]);
+            double aveDouble = Math.round((oldDouble + newDouble / 2) * 100.0)/100.0;
+            aveData[i] = String.valueOf(aveDouble);
+            result += " " + String.valueOf(aveDouble);
+        }
+
+        System.out.println(result);
+        editor.putString(teamBlue2, result);
+        editor.commit();
+    }
+
+    private void organizeData() {
+
+        int pointsRed1 = Integer.parseInt(rowRed1) * 10 + Integer.parseInt(colRed1) * 20 + Integer.parseInt(cubeRed1) * 2 + Integer.parseInt(platRed1) * 20 + Integer.parseInt(patternRed1) * 35 + Integer.parseInt(autoJewelRed1) * 30 + Integer.parseInt(safeZoneRed1) * 10 + Integer.parseInt(autoCubeRed1) * 15 + Integer.parseInt(autoColRed1) * 30;
+        String red1 = teamRed1 + " " + rowRed1 + " " + colRed1 + " " + cubeRed1 + " " + platRed1 + " " + patternRed1 + " " + autoJewelRed1 + " " + safeZoneRed1 + " " + autoCubeRed1 + " " + autoColRed1 + " " + pointsRed1;
+        saveRed1(pointsRed1);
+
+        int pointsRed2 = Integer.parseInt(rowRed2) * 10 + Integer.parseInt(colRed2) * 20 + Integer.parseInt(cubeRed2) * 2 + Integer.parseInt(platRed2) * 20 + Integer.parseInt(patternRed2) * 35 + Integer.parseInt(autoJewelRed2) * 30 + Integer.parseInt(safeZoneRed2) * 10 + Integer.parseInt(autoCubeRed2) * 15 + Integer.parseInt(autoColRed2) * 30;
+        String red2 = teamRed2 + " " + rowRed2 + " " + colRed2 + " " + cubeRed2 + " " + platRed2 + " " + patternRed2 + " " + autoJewelRed2 + " " + safeZoneRed2 + " " + autoCubeRed2 + " " + autoColRed2 + " " + pointsRed2;
+        saveRed2(pointsRed2);
+
+        int pointsBlue1 = Integer.parseInt(rowBlue1) * 10 + Integer.parseInt(colBlue1) * 20 + Integer.parseInt(cubeBlue1) * 2 + Integer.parseInt(platBlue1) * 20 + Integer.parseInt(patternBlue1) * 35 + Integer.parseInt(autoJewelBlue1) * 30 + Integer.parseInt(safeZoneBlue1) * 10 + Integer.parseInt(autoCubeBlue1) * 15 + Integer.parseInt(autoColBlue1) * 30;
+        String blue1 = teamBlue1 + " " + rowBlue1 + " " + colBlue1 + " " + cubeBlue1 + " " + platBlue1 + " " + patternBlue1 + " " + autoJewelBlue1 + " " + safeZoneBlue1 + " " + autoCubeBlue1 + " " + autoColBlue1 + " " + pointsBlue1;
+        saveBlue1(pointsBlue1);
+
+        int pointsBlue2 = Integer.parseInt(rowBlue2) * 10 + Integer.parseInt(colBlue2) * 20 + Integer.parseInt(cubeBlue2) * 2 + Integer.parseInt(platBlue2) * 20 + Integer.parseInt(patternBlue2) * 35 + Integer.parseInt(autoJewelBlue2) * 30 + Integer.parseInt(safeZoneBlue2) * 10 + Integer.parseInt(autoCubeBlue2) * 15 + Integer.parseInt(autoColBlue2) * 30;
+        String blue2 = teamBlue2 + " " + rowBlue2 + " " + colBlue2 + " " + cubeBlue2 + " " + platBlue2 + " " + patternBlue2 + " " + autoJewelBlue2 + " " + safeZoneBlue2 + " " + autoCubeBlue2 + " " + autoColBlue2 + " " + pointsBlue2;
+        saveBlue2(pointsBlue2);
 
     }
 
@@ -310,7 +488,8 @@ public class AddScoringActivity extends AppCompatActivity {
         }
         if(continueCounter == 2) {
             collectAutoData();
-            createSaveFile();
+            organizeData();
+            onBackPressed();
             continueCounter++;
             return;
         }
