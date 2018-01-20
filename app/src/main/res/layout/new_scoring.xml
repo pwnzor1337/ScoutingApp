@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
 
     <View
         android:layout_height="match_parent"
@@ -12,14 +13,17 @@
         android:layout_centerVertical="true"
         android:background="#9999c999"
         android:clickable="false"
-        />
+        android:id="@+id/view3"
+        android:onClick="closeKeyboard"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="#9999c999"
-        android:clickable="false" />
+        android:clickable="false"
+        android:id="@+id/view2"
+        android:onClick="closeKeyboard"/>
 
     <Button
         android:id="@+id/button"
@@ -27,6 +31,231 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Continue" />
+        android:text="Continue"
+        android:onClick="onContinue"/>
+
+    <RelativeLayout
+        android:id="@+id/topLeftPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:layout_above="@+id/view2"
+        android:layout_toLeftOf="@+id/view3"
+        android:layout_toStartOf="@+id/view3"
+        android:onClick="closeKeyboard">
+
+        <EditText
+            android:id="@+id/rowRed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:ems="5"
+            android:hint="Rows"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible"/>
+        <EditText
+            android:id="@+id/colRed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:ems="5"
+            android:hint="Cols"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible" />
+        <EditText
+            android:id="@+id/cubeRed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:ems="5"
+            android:hint="Cubes"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/topRightPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/view3"
+        android:layout_toRightOf="@+id/view3"
+        android:orientation="horizontal"
+        android:layout_above="@+id/view2"
+        android:onClick="closeKeyboard">
+        <EditText
+            android:id="@+id/rowRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:ems="5"
+            android:hint="Rows"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible" />
+        <EditText
+            android:id="@+id/colRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:ems="5"
+            android:hint="Cols"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible" />
+        <EditText
+            android:id="@+id/cubeRed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:ems="5"
+            android:hint="Cubes"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomLeftPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/view2"
+        android:orientation="horizontal"
+        android:layout_toLeftOf="@+id/view3"
+        android:layout_toStartOf="@+id/view3"
+        android:onClick="closeKeyboard">
+        <EditText
+            android:id="@+id/rowBlue1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:ems="5"
+            android:hint="Rows"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible" />
+        <EditText
+            android:id="@+id/colBlue1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:ems="5"
+            android:hint="Cols"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible" />
+        <EditText
+            android:id="@+id/cubeBlue1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:ems="5"
+            android:hint="Cubes"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomRightPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/view2"
+        android:orientation="horizontal"
+        android:layout_toRightOf="@+id/view3"
+        android:layout_toEndOf="@+id/view3"
+        android:onClick="closeKeyboard">
+        <EditText
+            android:id="@+id/rowBlue2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:ems="5"
+            android:hint="Rows"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible" />
+        <EditText
+            android:id="@+id/colBlue2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:ems="5"
+            android:hint="Cols"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible" />
+        <EditText
+            android:id="@+id/cubeBlue2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:ems="5"
+            android:hint="Cubes"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/topLeftPanelBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/view2"
+        android:layout_toLeftOf="@+id/view3"
+        android:layout_toStartOf="@+id/view3"/>
+
+    <TextView
+        android:id="@+id/topRightPanelBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/view3"
+        android:layout_above="@+id/view2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/bottomLeftPanelBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/view2"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/view3"
+        android:layout_toStartOf="@+id/view3"/>
+
+    <TextView
+        android:id="@+id/bottomRightPanelBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/view2"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/view3"
+        android:layout_toEndOf="@+id/view3" />
 
 </RelativeLayout>

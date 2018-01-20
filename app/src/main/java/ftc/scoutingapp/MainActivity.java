@@ -1,6 +1,7 @@
 package ftc.scoutingapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -75,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToNewScoring(View v) {
         System.out.println("going to new scoring");
-        setContentView(R.layout.new_scoring);
+        Intent addScoringActivityScreenIntent = new Intent(this, AddScoringActivity.class);
+        final int result = 1;
+        startActivityForResult(addScoringActivityScreenIntent,result);
     }
     public void goToNewReport(View v) {
         System.out.println("going to new report");
