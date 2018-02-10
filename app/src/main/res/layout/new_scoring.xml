@@ -117,7 +117,7 @@
             android:ems="5"
             android:hint="Rows"
             android:textAlignment="center"
-            android:inputType="number"/>
+            android:inputType="numberSigned"/>
         <EditText
             android:id="@+id/colRed1"
             android:layout_width="wrap_content"
@@ -126,7 +126,7 @@
             android:ems="5"
             android:hint="Cols"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/cubeRed1"
             android:layout_width="wrap_content"
@@ -135,7 +135,7 @@
             android:ems="5"
             android:hint="Cubes"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/platformRed1"
             android:layout_width="wrap_content"
@@ -144,7 +144,7 @@
             android:ems="5"
             android:hint="Platform"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/patternRed1"
             android:layout_width="wrap_content"
@@ -153,7 +153,7 @@
             android:ems="5"
             android:hint="Pattern"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
 
     </RelativeLayout>
 
@@ -177,7 +177,7 @@
             android:ems="5"
             android:hint="Rows"
             android:textAlignment="center"
-            android:inputType="number"/>
+            android:inputType="numberSigned"/>
         <EditText
             android:id="@+id/colRed2"
             android:layout_width="wrap_content"
@@ -186,7 +186,7 @@
             android:ems="5"
             android:hint="Cols"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/cubeRed2"
             android:layout_width="wrap_content"
@@ -195,7 +195,7 @@
             android:ems="5"
             android:hint="Cubes"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/platformRed2"
             android:layout_width="wrap_content"
@@ -204,7 +204,7 @@
             android:ems="5"
             android:hint="Platform"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/patternRed2"
             android:layout_width="wrap_content"
@@ -213,7 +213,7 @@
             android:ems="5"
             android:hint="Pattern"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
 
     </RelativeLayout>
 
@@ -238,7 +238,7 @@
             android:ems="5"
             android:hint="Rows"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/colBlue1"
             android:layout_width="wrap_content"
@@ -247,7 +247,7 @@
             android:ems="5"
             android:hint="Cols"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/cubeBlue1"
             android:layout_width="wrap_content"
@@ -256,7 +256,7 @@
             android:ems="5"
             android:hint="Cubes"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/platformBlue1"
             android:layout_width="wrap_content"
@@ -265,7 +265,7 @@
             android:ems="5"
             android:hint="Platform"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/patternBlue1"
             android:layout_width="wrap_content"
@@ -274,7 +274,7 @@
             android:ems="5"
             android:hint="Pattern"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
 
     </RelativeLayout>
 
@@ -299,7 +299,7 @@
             android:ems="5"
             android:hint="Rows"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/colBlue2"
             android:layout_width="wrap_content"
@@ -308,7 +308,7 @@
             android:ems="5"
             android:hint="Cols"
             android:textAlignment="center"
-            android:inputType="number"/>
+            android:inputType="numberSigned"/>
         <EditText
             android:id="@+id/cubeBlue2"
             android:layout_width="wrap_content"
@@ -317,7 +317,7 @@
             android:ems="5"
             android:hint="Cubes"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/platformBlue2"
             android:layout_width="wrap_content"
@@ -326,7 +326,7 @@
             android:ems="5"
             android:hint="Platform"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/patternBlue2"
             android:layout_width="wrap_content"
@@ -335,7 +335,7 @@
             android:ems="5"
             android:hint="Pattern"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
 
     </RelativeLayout>
 
@@ -362,7 +362,7 @@
             android:ems="5"
             android:hint="Safe Zone"
             android:textAlignment="center"
-            android:inputType="number"/>
+            android:inputType="numberSigned"/>
         <EditText
             android:id="@+id/autoCubeRed1"
             android:layout_width="wrap_content"
@@ -371,7 +371,7 @@
             android:ems="5"
             android:hint="Auto Cube"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/autoColRed1"
             android:layout_width="wrap_content"
@@ -380,7 +380,7 @@
             android:ems="5"
             android:hint="Correct Col"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/autoJewelRed1"
             android:layout_width="wrap_content"
@@ -389,7 +389,7 @@
             android:ems="5"
             android:hint="Jewel"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
 
     </RelativeLayout>
 
@@ -456,7 +456,7 @@
             android:ems="5"
             android:hint="Safe Zone"
             android:textAlignment="center"
-            android:inputType="number"/>
+            android:inputType="numberSigned"/>
         <EditText
             android:id="@+id/autoCubeRed2"
             android:layout_width="wrap_content"
@@ -465,7 +465,7 @@
             android:ems="5"
             android:hint="Auto Cube"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/autoColRed2"
             android:layout_width="wrap_content"
@@ -474,7 +474,7 @@
             android:ems="5"
             android:hint="Correct Col"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/autoJewelRed2"
             android:layout_width="wrap_content"
@@ -483,7 +483,7 @@
             android:ems="5"
             android:hint="Jewel"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
 
     </RelativeLayout>
 
@@ -507,7 +507,7 @@
             android:ems="5"
             android:hint="Safe Zone"
             android:textAlignment="center"
-            android:inputType="number"/>
+            android:inputType="numberSigned"/>
         <EditText
             android:id="@+id/autoCubeBlue1"
             android:layout_width="wrap_content"
@@ -516,7 +516,7 @@
             android:ems="5"
             android:hint="Auto Cube"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/autoColBlue1"
             android:layout_width="wrap_content"
@@ -525,7 +525,7 @@
             android:ems="5"
             android:hint="Correct Col"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/autoJewelBlue1"
             android:layout_width="wrap_content"
@@ -534,7 +534,7 @@
             android:ems="5"
             android:hint="Jewel"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
 
     </RelativeLayout>
 
@@ -543,6 +543,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
+        android:gravity="center"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/view2"
         android:layout_toEndOf="@+id/view3"
@@ -557,7 +558,7 @@
             android:ems="5"
             android:hint="Safe Zone"
             android:textAlignment="center"
-            android:inputType="number"/>
+            android:inputType="numberSigned"/>
         <EditText
             android:id="@+id/autoCubeBlue2"
             android:layout_width="wrap_content"
@@ -566,7 +567,7 @@
             android:ems="5"
             android:hint="Auto Cube"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/autoColBlue2"
             android:layout_width="wrap_content"
@@ -575,7 +576,7 @@
             android:ems="5"
             android:hint="Correct Col"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
         <EditText
             android:id="@+id/autoJewelBlue2"
             android:layout_width="wrap_content"
@@ -584,7 +585,7 @@
             android:ems="5"
             android:hint="Jewel"
             android:textAlignment="center"
-            android:inputType="number" />
+            android:inputType="numberSigned" />
 
     </RelativeLayout>
 

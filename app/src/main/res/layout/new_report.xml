@@ -49,7 +49,7 @@
                 android:hint="Enter Team Number Here"
                 android:textColor="#000000"
                 android:textAlignment="center"
-                android:inputType="number" />
+                android:inputType="numberSigned" />
 
 
             <CheckBox
@@ -82,7 +82,7 @@
                 android:textSize="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:inputType="numberSigned"
                 />
 
 
@@ -150,7 +150,7 @@
                 android:textSize="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:inputType="numberSigned"
                 />
 
             <CheckBox
@@ -184,7 +184,7 @@
                 android:textSize="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:inputType="numberSigned"
                 />
 
 
@@ -210,7 +210,7 @@
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:maxEms="2"
-                android:inputType="number" />
+                android:inputType="numberSigned" />
 
             <CheckBox
                 android:id="@+id/teleopPlatform"
@@ -243,7 +243,7 @@
                 android:textSize="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:inputType="numberSigned"
                 />
 
             <TextView

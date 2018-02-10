@@ -9,8 +9,11 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         super.setContentView(viewHistory.get(viewHistory.size() - 1));
     }
 
+    //Same as pressing back
     //This is = pressing back button.
     @Override
     public void onBackPressed() {
@@ -77,11 +81,72 @@ public class MainActivity extends AppCompatActivity {
 
     public void findTeam(View v) {
         String teamNumber;
+        EditText team = (EditText) findViewById(R.id.searchBar);
 
-//        SharedPreferences sharedpref = getSharedPreferences(teamNumber,
+        teamNumber = team.getText().toString();
+
+        System.out.println("team number pulled is: " + teamNumber);
+
+        SharedPreferences sharedPref = getSharedPreferences(teamNumber,Context.MODE_PRIVATE);
+        String dataString = sharedPref.getString(teamNumber, "Sorry, no data found!");
+
+        if(dataString.equals("Sorry, no data found!")) {
+            System.out.println("data is empty...");
+        }
+        else {
+            System.out.println("data has shit in it...");
+            onBackPressed();
+            goToTeamView(v);
+            closeKeyboard(v);
+            displayTeamData(dataString);
+        }
+    }
+
+    private void displayTeamData(String dataString) {
+        System.out.println(dataString);
+
+        String[] data = dataString.split(" ");
+
+        TextView teamNumberDisplay = (TextView)findViewById(R.id.teamNumberDisplay);
+        teamNumberDisplay.setText(data[0]);
+
+        TextView rowDisplay = (TextView)findViewById(R.id.rowDisplay);
+        rowDisplay.setText(data[1]);
+
+        TextView colDisplay = (TextView)findViewById(R.id.colDisplay);
+        colDisplay.setText(data[2]);
+
+        TextView cubeDisplay = (TextView)findViewById(R.id.cubeDisplay);
+        cubeDisplay.setText(data[3]);
+
+        TextView platDisplay = (TextView)findViewById(R.id.platDisplay);
+        platDisplay.setText(data[4]);
+
+        TextView patternDisplay = (TextView)findViewById(R.id.patternDisplay);
+        patternDisplay.setText(data[5]);
+
+        TextView jewelDisplay = (TextView)findViewById(R.id.jewelDisplay);
+        jewelDisplay.setText(data[6]);
+
+        TextView safezoneDisplay = (TextView)findViewById(R.id.safezoneDisplay);
+        safezoneDisplay.setText(data[7]);
+
+        TextView autoCubeDisplay = (TextView)findViewById(R.id.autoCubeDisplay);
+        autoCubeDisplay.setText(data[8]);
+
+        TextView correctColDisplay = (TextView)findViewById(R.id.correctColDisplay);
+        correctColDisplay.setText(data[9]);
+
+        TextView pointsDisplay = (TextView)findViewById(R.id.pointsDisplay);
+        pointsDisplay.setText(data[10]);
     }
 
 
+
+    public void goToTeamView(View v) {
+        System.out.println("going to team view");
+        setContentView(R.layout.team_view);
+    }
     public void goToBrowseData(View v) {
         System.out.println("going to browse data");
         setContentView(R.layout.browse_data);

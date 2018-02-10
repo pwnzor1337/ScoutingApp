@@ -310,7 +310,7 @@ public class AddScoringActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
 
         if(oldDataString.equals("")) {
-            String red1 = teamRed1 + " " + rowRed1 + " " + colRed1 + " " + cubeRed1 + " " + platRed1 + " " + patternRed1 + " " + autoJewelRed1 + " " + safeZoneRed1 + " " + autoCubeRed1 + " " + autoColRed1 + " " + String.valueOf(points);
+            String red1 = teamRed1 + " " + rowRed1 + " " + colRed1 + " " + cubeRed1 + " " + platRed1 + " " + patternRed1 + " " + autoJewelRed1 + " " + safeZoneRed1 + " " + autoCubeRed1 + " " + autoColRed1 + " " + String.valueOf(points) + " " + "1";
             System.out.println(red1);
             editor.putString(teamRed1, red1);
             editor.commit();
@@ -319,21 +319,29 @@ public class AddScoringActivity extends AppCompatActivity {
 
         String[] newData = {rowRed1, colRed1, cubeRed1, platRed1, patternRed1, autoJewelRed1, safeZoneRed1, autoCubeRed1, autoColRed1, String.valueOf(points)};
         String[] oldDataWithTeam = oldDataString.split(" ");
-        String[] oldData = new String[oldDataWithTeam.length-1];
+        String[] oldData = new String[oldDataWithTeam.length-2];
         for(int i = 0; i < oldData.length; i++) {
             oldData[i] = oldDataWithTeam[i+1];
         }
         String[] aveData = new String[newData.length];
 
+        int numEntries = Integer.parseInt(oldDataWithTeam[oldDataWithTeam.length-1]);
+        numEntries++;
+
         String result = teamRed1;
 
         for(int i = 0; i < newData.length; i++) {
             double oldDouble = Double.parseDouble(oldData[i]);
+            System.out.println("old double: " + oldDouble);
             double newDouble = Double.parseDouble(newData[i]);
-            double aveDouble = Math.round((oldDouble + newDouble / 2) * 100.0)/100.0;
+            System.out.println("new double: " + newDouble);
+            double aveDouble = Math.round((((oldDouble * (numEntries-1)) + newDouble) / numEntries) * 100.0)/100.0;
+            System.out.println("average double: " + aveDouble);
             aveData[i] = String.valueOf(aveDouble);
             result += " " + String.valueOf(aveDouble);
         }
+
+        result += " " + numEntries;
 
         System.out.println(result);
         editor.putString(teamRed1, result);
@@ -346,7 +354,7 @@ public class AddScoringActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
 
         if(oldDataString.equals("")) {
-            String red2 = teamRed2 + " " + rowRed2 + " " + colRed2 + " " + cubeRed2 + " " + platRed2 + " " + patternRed2 + " " + autoJewelRed2 + " " + safeZoneRed2 + " " + autoCubeRed2 + " " + autoColRed2 + " " + String.valueOf(points);
+            String red2 = teamRed2 + " " + rowRed2 + " " + colRed2 + " " + cubeRed2 + " " + platRed2 + " " + patternRed2 + " " + autoJewelRed2 + " " + safeZoneRed2 + " " + autoCubeRed2 + " " + autoColRed2 + " " + String.valueOf(points) + " " + 1;
             System.out.println(red2);
             editor.putString(teamRed2, red2);
             editor.commit();
@@ -355,21 +363,26 @@ public class AddScoringActivity extends AppCompatActivity {
 
         String[] newData = {rowRed2, colRed2, cubeRed2, platRed2, patternRed2, autoJewelRed2, safeZoneRed2, autoCubeRed2, autoColRed2, String.valueOf(points)};
         String[] oldDataWithTeam = oldDataString.split(" ");
-        String[] oldData = new String[oldDataWithTeam.length-1];
+        String[] oldData = new String[oldDataWithTeam.length-2];
         for(int i = 0; i < oldData.length; i++) {
             oldData[i] = oldDataWithTeam[i+1];
         }
         String[] aveData = new String[newData.length];
+
+        int numEntries = Integer.parseInt(oldDataWithTeam[oldDataWithTeam.length-1]);
+        numEntries++;
 
         String result = teamRed2;
 
         for(int i = 0; i < newData.length; i++) {
             double oldDouble = Double.parseDouble(oldData[i]);
             double newDouble = Double.parseDouble(newData[i]);
-            double aveDouble = Math.round((oldDouble + newDouble / 2.0) * 100.0)/100.0;
+            double aveDouble = Math.round((((oldDouble * (numEntries-1)) + newDouble) / numEntries) * 100.0)/100.0;
             aveData[i] = String.valueOf(aveDouble);
             result += " " + String.valueOf(aveDouble);
         }
+
+        result += " " + numEntries;
 
         System.out.println(result);
         editor.putString(teamRed2, result);
@@ -382,7 +395,7 @@ public class AddScoringActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
 
         if(oldDataString.equals("")) {
-            String blue1 = teamBlue1 + " " + rowBlue1 + " " + colBlue1 + " " + cubeBlue1 + " " + platBlue1 + " " + patternBlue1 + " " + autoJewelBlue1 + " " + safeZoneBlue1 + " " + autoCubeBlue1 + " " + autoColBlue1 + " " + String.valueOf(points);
+            String blue1 = teamBlue1 + " " + rowBlue1 + " " + colBlue1 + " " + cubeBlue1 + " " + platBlue1 + " " + patternBlue1 + " " + autoJewelBlue1 + " " + safeZoneBlue1 + " " + autoCubeBlue1 + " " + autoColBlue1 + " " + String.valueOf(points) + " " + 1;
             System.out.println(blue1);
             editor.putString(teamBlue1, blue1);
             editor.commit();
@@ -391,21 +404,26 @@ public class AddScoringActivity extends AppCompatActivity {
 
         String[] newData = {rowBlue1, colBlue1, cubeBlue1, platBlue1, patternBlue1, autoJewelBlue1, safeZoneBlue1, autoCubeBlue1, autoColBlue1, String.valueOf(points)};
         String[] oldDataWithTeam = oldDataString.split(" ");
-        String[] oldData = new String[oldDataWithTeam.length-1];
+        String[] oldData = new String[oldDataWithTeam.length-2];
         for(int i = 0; i < oldData.length; i++) {
             oldData[i] = oldDataWithTeam[i+1];
         }
         String[] aveData = new String[newData.length];
+
+        int numEntries = Integer.parseInt(oldDataWithTeam[oldDataWithTeam.length-1]);
+        numEntries++;
 
         String result = teamBlue1;
 
         for(int i = 0; i < newData.length; i++) {
             double oldDouble = Double.parseDouble(oldData[i]);
             double newDouble = Double.parseDouble(newData[i]);
-            double aveDouble = Math.round((oldDouble + newDouble / 2) * 100.0)/100.0;
+            double aveDouble = Math.round((((oldDouble * (numEntries-1)) + newDouble) / numEntries) * 100.0)/100.0;
             aveData[i] = String.valueOf(aveDouble);
             result += " " + String.valueOf(aveDouble);
         }
+
+        result += " " + numEntries;
 
         System.out.println(result);
         editor.putString(teamBlue1, result);
@@ -420,7 +438,7 @@ public class AddScoringActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
 
         if(oldDataString.equals("")) {
-            String blue2 = teamBlue2 + " " + rowBlue2 + " " + colBlue2 + " " + cubeBlue2 + " " + platBlue2 + " " + patternBlue2 + " " + autoJewelBlue2 + " " + safeZoneBlue2 + " " + autoCubeBlue2 + " " + autoColBlue2 + " " + String.valueOf(points);
+            String blue2 = teamBlue2 + " " + rowBlue2 + " " + colBlue2 + " " + cubeBlue2 + " " + platBlue2 + " " + patternBlue2 + " " + autoJewelBlue2 + " " + safeZoneBlue2 + " " + autoCubeBlue2 + " " + autoColBlue2 + " " + String.valueOf(points) + " " + 1;
             System.out.println(blue2);
             editor.putString(teamBlue2, blue2);
             editor.commit();
@@ -429,7 +447,7 @@ public class AddScoringActivity extends AppCompatActivity {
 
         String[] newData = {rowBlue2, colBlue2, cubeBlue2, platBlue2, patternBlue2, autoJewelBlue2, safeZoneBlue2, autoCubeBlue2, autoColBlue2, String.valueOf(points)};
         String[] oldDataWithTeam = oldDataString.split(" ");
-        String[] oldData = new String[oldDataWithTeam.length-1];
+        String[] oldData = new String[oldDataWithTeam.length-2];
         for(int i = 0; i < oldData.length; i++) {
             oldData[i] = oldDataWithTeam[i+1];
         }
@@ -437,13 +455,18 @@ public class AddScoringActivity extends AppCompatActivity {
 
         String result = teamBlue2;
 
+        int numEntries = Integer.parseInt(oldDataWithTeam[oldDataWithTeam.length-1]);
+        numEntries++;
+
         for(int i = 0; i < newData.length; i++) {
             double oldDouble = Double.parseDouble(oldData[i]);
             double newDouble = Double.parseDouble(newData[i]);
-            double aveDouble = Math.round((oldDouble + newDouble / 2) * 100.0)/100.0;
+            double aveDouble = Math.round((((oldDouble * (numEntries-1)) + newDouble) / numEntries) * 100.0)/100.0;
             aveData[i] = String.valueOf(aveDouble);
             result += " " + String.valueOf(aveDouble);
         }
+
+        result += " " + numEntries;
 
         System.out.println(result);
         editor.putString(teamBlue2, result);
